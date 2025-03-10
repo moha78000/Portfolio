@@ -1,26 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
     const cvContainer = document.querySelector(".cv-container");
+    const downloadButton = document.getElementById("download-cv");
 
+    // Fonction pour vérifier si l'élément est visible
     function checkVisibility() {
         const rect = cvContainer.getBoundingClientRect();
         const windowHeight = window.innerHeight;
 
-        // Si l'élément est visible dans la fenêtre du navigateur
         if (rect.top < windowHeight - 100) {
             cvContainer.classList.add("loaded");
         }
     }
 
-    // Vérifie si le CV est visible au chargement de la page
+    // Vérifie si le CV est visible au chargement
     checkVisibility();
 
-    // Ajoute un event listener pour vérifier la visibilité lors du scroll
-    window.addEventListener("scroll", function () {
-        checkVisibility();
-    });
+    // Ajoute un event listener pour le scroll
+    window.addEventListener("scroll", checkVisibility);
 
-    // Re-check lors du redimensionnement de la fenêtre
-    window.addEventListener("resize", function () {
-        checkVisibility();
+    // Télécharger le CV au clic
+    downloadButton.addEventListener("click", function () {
+        const cvUrl = "../assets/images/CV_Khaldi_Mohamed.jpg"; // Assurez-vous que ce chemin est correct
+        const a = document.createElement("a");
+        a.href = cvUrl;
+        a.download = "../assets/images/CV_Khaldi_Mohamed.jpg";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
     });
 });
