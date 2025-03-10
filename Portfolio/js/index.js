@@ -20,10 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Télécharger le CV au clic
     downloadButton.addEventListener("click", function () {
-        const cvUrl = "../assets/images/CV_Khaldi_Mohamed.jpg"; // Assurez-vous que ce chemin est correct
+        const cvUrl = "../assets/images/CV_Khaldi_Mohamed.jpg";
         const a = document.createElement("a");
         a.href = cvUrl;
-        a.download = "../assets/images/CV_Khaldi_Mohamed.jpg";
+        a.setAttribute("download", "CV_Khaldi_Mohamed.pdf");
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
