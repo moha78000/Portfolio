@@ -108,6 +108,20 @@ ul li {
     margin-top: 20px;
 }
 
+#projets img {
+    display: block;  /* Permet de centrer avec margin auto */
+    margin: 15px auto; /* Centre horizontalement */
+    max-width: 80%; /* Ajuste la taille pour éviter qu'elles soient trop grandes */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+#projets img:hover {
+    transform: scale(1.05);
+}
+
+
 /* CV */
 .cv-container {
     text-align: center;
