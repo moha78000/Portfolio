@@ -121,6 +121,13 @@ ul li {
     transform: scale(1.05);
 }
 
+.competences-icons img {
+    width: 40px;  /* Taille uniforme des icônes */
+    height: 40px;
+    margin: 5px;  /* Espacement entre les icônes */
+    vertical-align: middle; /* Alignement avec le texte */
+}
+
 
 /* CV */
 .cv-container {
